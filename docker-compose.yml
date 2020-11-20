@@ -4,7 +4,7 @@ services:
     container_name: jira 
     image: atlassian/jira-software:latest
     volumes: 
-      - ./jira:/var/atlassian/application-data/jira
+      - jira-volume:/var/atlassian/application-data/jira
     depends_on:
      - postgres
     environment:
@@ -14,40 +14,11 @@ services:
      - JVM_MAXIMUM_MEMORY=2g
      - SET_PERMISSIONS=false
 
-  # confluence: 
-  #   container_name: confluence
-  #   image: atlassian/confluence-server:latest
-  #   volumes:
-  #    - ./confluence:/var/atlassian/application-data/confluence 
-  #   depends_on:
-  #    - postgres
-  #   environment: 
-  #    - ATL_PROXY_NAME=confluence.internal
-  #    - ATL_PROXY_PORT=80
-  #    - ATL_TOMCAT_SCHEME=http
-  #    - JVM_MAXIMUM_MEMORY=2g
-  #    - SET_PERMISSIONS=false
-
-  # bitbucket: 
-  #   container_name: bitbucket 
-  #   image: atlassian/bitbucket-server:latest
-  #   volumes:
-  #    - ./bitbucket:/var/atlassian/application-data/bitbucket
-  #   depends_on:
-  #    - postgres
-  #   environment: 
-  #    - SERVER_PROXY_NAME=bitbucket.internal
-  #    - SERVER_PROXY_PORT=80
-  #    - SERVER_SCHEME=http     
-  #    - JVM_MAXIMUM_MEMORY=2g
-  #    - SET_PERMISSIONS=false
-
   postgres:
     container_name: postgres
     image: postgres:10
     volumes:
-     - ./postgres:/var/lib/postgresql
-#     - ./
+     - postgres-volume:/var/lib/postgresql
     environment:
      - POSTGRES_USER=postgres 
      - POSTGRES_PASSWORD=incorrect
@@ -56,7 +27,7 @@ services:
     container_name: pgadmin 
     image: dpage/pgadmin4
     volumes: 
-     - ./pgadmin:/var/lib/pgadmin
+     - pgadmin-volume:/var/lib/pgadmin
     depends_on:
      - postgres 
     environment: 
@@ -70,7 +41,7 @@ services:
   nodered:
     container_name: nodered
     volumes: 
-     - ./nodered:/data
+     - nodered-volume:/data
     image: nodered/node-red:latest-minimal
 
   nginx: 
@@ -80,8 +51,6 @@ services:
      - ./nginx/nginx.conf:/etc/nginx/nginx.conf 
     depends_on: 
      - jira 
-    #  - confluence 
-    #  - bitbucket 
      - pgadmin
     ports: 
      - "80:80" 
@@ -89,9 +58,11 @@ services:
       default: 
         aliases:
          - jira.internal
-        #  - confluence.internal
-        #  - bitbucket.internal
          - pgadmin.internal
          - nodered.internal
-
       
+volumes:
+    nodered-volume:
+    jira-volume:
+    pgadmin-volume:
+    postgres-volume:
