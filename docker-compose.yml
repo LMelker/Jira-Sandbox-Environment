@@ -47,7 +47,7 @@ services:
     image: postgres:10
     volumes:
      - ./postgres:/var/lib/postgresql
-     - ./
+#     - ./
     environment:
      - POSTGRES_USER=postgres 
      - POSTGRES_PASSWORD=incorrect
