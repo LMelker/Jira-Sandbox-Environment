@@ -2,7 +2,7 @@ version: '3'
 services: 
   jira:
     container_name: jira 
-    image: atlassian/jira-software:8.7.1
+    image: atlassian/jira-software:latest
     volumes: 
       - jira-volume:/var/atlassian/application-data/jira
     depends_on:
