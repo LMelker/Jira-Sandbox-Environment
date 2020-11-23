@@ -19,15 +19,15 @@ docker-compose up -d
 - Create a database for Jira
 - Goto: http://jira.internal
  - It can be needed to Restart Jira
- - Start setup Jira with the database you had create.
-   
+ - Start setup Jira with the database you had created.
 
-Use NodeRed (http://nodered.internal) for mockups of your work / testing.
-for example:
-- Add "pallette" for SMTP, so Jira can send mail
-- Add "pallette" for Dashboard, and show the status from JVM.
+
+Use NodeRed (http://nodered.internal) for mockups of your work / testing.  
+For example:  
+- Add "pallette" for SMTP, so Jira can send mail  
+- Add "pallette" for Dashboard, and show the status from JVM.  
   (To easy view JVM: add jolokia-plugin for Jira.) 
 
 
-## License
+## License  
 [MIT](https://choosealicense.com/licenses/mit/)
