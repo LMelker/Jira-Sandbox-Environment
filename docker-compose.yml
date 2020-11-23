@@ -2,7 +2,7 @@ version: '3'
 services: 
   jira:
     container_name: jira 
-    image: atlassian/jira-software:latest
+    image: atlassian/jira-software:8.7.1
     volumes: 
       - jira-volume:/var/atlassian/application-data/jira
     depends_on:
@@ -21,10 +21,10 @@ services:
      - postgres-volume:/var/lib/postgresql
     environment:
      - POSTGRES_USER=postgres 
-     - POSTGRES_PASSWORD=incorrect
+     - POSTGRES_PASSWORD=Incorrect
 
   pgadmin:
-    container_name: pgadmin 
+    container_name: pgadmin
     image: dpage/pgadmin4
     volumes: 
      - pgadmin-volume:/var/lib/pgadmin
@@ -35,8 +35,8 @@ services:
      - SERVER_PROXY_PORT=80
      - PGADMIN_LISTEN_PORT=5050
      - SERVER_SCHEME=http 
-     - PGADMIN_DEFAULT_EMAIL=pgadmin@gadmin.internal
-     - PGADMIN_DEFAULT_PASSWORD=incorrect
+     - PGADMIN_DEFAULT_EMAIL=pgadmin@pgadmin.internal
+     - PGADMIN_DEFAULT_PASSWORD=Incorrect
 
   nodered:
     container_name: nodered
@@ -60,7 +60,6 @@ services:
          - jira.internal
          - pgadmin.internal
          - nodered.internal
-      
 volumes:
     nodered-volume:
     jira-volume:
