@@ -14,15 +14,16 @@ You need to add this hosts in your "hosts"-file:
 ````bash
 docker-compose up -d
 ````
-- Go to :http://pgadmin.internal
+- Go to: http://pgadmin.internal
 - Connect to Postgres database
 - Create a database for Jira
-- It can be needed to Restart Jira
-- Start setup Jira with the database you had create.
+- Goto: http://jira.internal
+-- It can be needed to Restart Jira
+-- Start setup Jira with the database you had create.
    
 
-Use NodeRed for muckups of your work / testing.
-Example:
+Use NodeRed (http://nodered.internal) for mockups of your work / testing.
+for example:
 - Add "pallette" for SMTP, so Jira can send mail
 - Add "pallette" for Dashboard, and show the status from JVM.
   (To easy view JVM: add jolokia-plugin for Jira.) 
