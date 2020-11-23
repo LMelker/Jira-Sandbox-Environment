@@ -18,8 +18,8 @@ docker-compose up -d
 - Connect to Postgres database
 - Create a database for Jira
 - Goto: http://jira.internal
--- It can be needed to Restart Jira
--- Start setup Jira with the database you had create.
+ - It can be needed to Restart Jira
+ - Start setup Jira with the database you had create.
    
 
 Use NodeRed (http://nodered.internal) for mockups of your work / testing.
