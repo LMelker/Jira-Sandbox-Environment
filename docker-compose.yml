@@ -4,7 +4,9 @@ services:
     container_name: jira 
     image: atlassian/jira-software:latest
     volumes: 
-      - jira-volume:/var/atlassian/application-data/jira
+     - jira-volume:/var/atlassian/application-data/jira
+    ports:
+     - "8080:8080"
     depends_on:
      - postgres
     environment:
@@ -28,6 +30,8 @@ services:
     image: dpage/pgadmin4
     volumes: 
      - pgadmin-volume:/var/lib/pgadmin
+    ports:
+     - "5050:5050"
     depends_on:
      - postgres 
     environment: 
@@ -43,7 +47,8 @@ services:
     volumes: 
      - nodered-volume:/data
     image: nodered/node-red:latest-minimal
-
+    ports:
+     - "1880:1880"
   nginx: 
     container_name: nginx 
     image: nginx:latest 
