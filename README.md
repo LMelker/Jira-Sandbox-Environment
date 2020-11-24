@@ -1,6 +1,6 @@
 # Jira Sandbox Environment
 
-## Pre-conf 
+## Pre-conf
 You need to add this hosts in your "hosts"-file:
 
 ```bash
@@ -15,7 +15,7 @@ App     | Url
 --------|----------------------  
 jira    | http://localhost:8080  
 pgadmin | http://localhost:5050
-nodered | http://localhost:1880 
+nodered | http://localhost:1880
 
 ## Startup...
 ````bash
@@ -30,9 +30,18 @@ docker-compose up -d
 
 Use NodeRed (http://nodered.internal) for mockups of your work / testing.  
 For example:  
-- Add "pallette" for SMTP, so Jira can send mail  
-- Add "pallette" for Dashboard, and show the status from JVM.  
-  (To easy view JVM: add jolokia-plugin for Jira.) 
+- Add "palette" for SMTP, so Jira can send mail  
+- Add "palette" for Dashboard, and show the status from JVM.  
+  (To easy view JVM: add jolokia-plugin for Jira.)
+
+## Links
+Apps    | Url
+--------|-----------------------------
+Jolokia | https://marketplace.atlassian.com/apps/1213211/jolokia-monitoring-agent
+node-red-contrib-mailin-smtp (SMTP for NodeRed)| https://flows.nodered.org/node/node-red-contrib-mailin-smtp
+node-red-dashboard (Dashboard for NodeRed) | https://flows.nodered.org/node/node-red-dashboard
+@digitaloak/node-red-contrib-digitaloak-postgresql (Postgres for NodeRed)| https://flows.nodered.org/node/@digitaloak/node-red-contrib-digitaloak-postgresql
+
 
 
 ## License  
