@@ -10,10 +10,12 @@ You need to add this hosts in your "hosts"-file:
 127.0.0.1  nodered.internal
 ```
 If you are't able to edit the "hosts"-file, use the ports..  
-  
-| jira | http://localhost:8080 |  
-| pgadmin | http://localhost:5050 |
-| nodered | http://localhost:1880 |
+
+App     | Url
+--------|----------------------  
+jira    | http://localhost:8080  
+pgadmin | http://localhost:5050
+nodered | http://localhost:1880 
 
 ## Startup...
 ````bash
