@@ -2,7 +2,7 @@ version: '3'
 services:
   jira:
     container_name: jira
-    image: atlassian/jira-software
+    image: atlassian/jira-core:latest
     volumes:
      - jira-volume:/var/atlassian/application-data/jira
     ports:
@@ -20,14 +20,14 @@ services:
     container_name: postgres
     image: postgres:10
     volumes:
-     - postgres-volume:/var/lib/postgresql
+     - postgres-volume:/var/lib/postgresql/data
     environment:
      - POSTGRES_USER=postgres
      - POSTGRES_PASSWORD=Incorrect
 
   pgadmin:
     container_name: pgadmin
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest
     volumes:
      - pgadmin-volume:/var/lib/pgadmin
     ports:
@@ -49,6 +49,7 @@ services:
     image: nodered/node-red:latest-minimal
     ports:
      - "1880:1880"
+
   nginx:
     container_name: nginx
     image: nginx:latest
@@ -65,6 +66,7 @@ services:
          - jira.internal
          - pgadmin.internal
          - nodered.internal
+
 volumes:
     nodered-volume:
     jira-volume:
