@@ -45,7 +45,7 @@ For example:
 - Add "palette" for Dashboard, and show the status from JVM.  
   (To easy view JVM: add jolokia-plugin for Jira.)
 
-## [Monitoring Jira...](prometheus_grafana)
+## [Monitoring Jira...](prometheus_grafana.md)
 Use Prometheus to pick up data every 15sec from Jira.
 Use Grafana to view the data that Prometheus picks up.
 
