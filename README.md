@@ -5,7 +5,7 @@ You need to add this hosts in your "hosts"-file:
 
 ```bash
 # Docker Jira Sandbox
-127.0.0.1  jira.internal4
+127.0.0.1  jira.internal
 127.0.0.1  pgadmin.internal
 127.0.0.1  nodered.internal
 127.0.0.1  grafaba.internal
