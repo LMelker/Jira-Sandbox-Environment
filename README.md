@@ -28,7 +28,7 @@ docker-compose up -d
 ````
 - Go to: http://pgadmin.internal
 - Connect to Postgres database
-- Create a database for Jira and confluence
+- Create a database for Jira
 - Goto: http://jira.internal
 - Start setup Jira with the database you had created.
 
@@ -47,7 +47,7 @@ For example:
 
 ## [Monitoring Jira...](prometheus_grafana.md)
 Use Prometheus to pick up data every 15sec from Jira.
-Use Grafana to view the data that Prometheus picks up.
+Use Grafana to view the data that Prometheus picks up
 
 ### Setup Grafana
 - Go to: http://grafana.internal
