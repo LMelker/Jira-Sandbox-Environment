@@ -8,7 +8,7 @@ You need to add this hosts in your "hosts"-file:
 127.0.0.1  jira.internal
 127.0.0.1  pgadmin.internal
 127.0.0.1  nodered.internal
-127.0.0.1  grafaba.internal
+127.0.0.1  grafana.internal
 127.0.0.1  prometheus.internal
 
 ```
@@ -19,7 +19,7 @@ App        | Url
 jira       | http://localhost:8080
 pgadmin    | http://localhost:5050
 nodered    | http://localhost:1880
-grafaba    | http://localhost:3000
+grafana    | http://localhost:3000
 prometheus | http://localhost:9090
 
 ## Startup
@@ -59,6 +59,7 @@ Use Grafana to view the data that Prometheus picks up
     - URL: http://prometheus:9090
     - Access: Server
   - Press: Save & test
+  
 ### Setup Prometheus
 - In Jira: add the addon: "Prometheus Exporter For Jira"
   - Go to the settings of Prometheus:
