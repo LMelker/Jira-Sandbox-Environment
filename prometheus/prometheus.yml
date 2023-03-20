@@ -32,7 +32,18 @@ scrape_configs:
     scheme: http # change to http if don't you have https
     metrics_path: '/plugins/servlet/prometheus/metrics'
     params:
-        token: ['gGxh5duU0ZYIfoX5jlwzkLDpSsPPLlMzEhK']
+        token: ['']
     static_configs:
       - targets: ['jira:8080'] # Jira host and port you serve
 
+  - job_name: 'nodered'
+    scheme: http
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['nodered:1880']
+
+  - job_name: 'grafana'
+    scheme: http
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['grafana:3000']
